@@ -1,0 +1,68 @@
+print('Cadastro na biblioteca')
+print('_'*60)
+emailCad = input('Digite o email: ')
+senhaCad = input('Digite a senha: ')
+emailConf = input('Confirme o email: ')
+senhaConf = input('Confirme a senha: ')
+print('_'*60)
+
+
+
+if emailCad.lower() != emailConf.lower() or senhaCad != senhaConf:
+    while True:
+        print('Email ou senha incorretos, digite novamente.')
+        emailConf = input('Confirme o email: ')
+        senhaConf = input('Confirme a senha: ')
+        print('_'*60)
+        if emailCad.lower() == emailConf.lower() and senhaCad == senhaConf:
+            print('Cadastro feito com sucesso!')
+            break
+            print('_'*60)
+else:
+    print('Cadastro feito com sucesso!')
+    print('_'*60)
+
+print('Área da biblioteca')
+
+opcoes = input(f"""Deseja reservar livros ou acessar informações sensiveis?
+                Digite L para livros e I para informações:  """) 
+print('_'*60)   
+
+#.lower() para deixar em minúsculo 
+if opcoes.lower() == "l":
+    emailDig = input('Digite o email: ') 
+    senhaDig = input('Digite a senha: ') 
+    if emailDig.lower() == emailConf.lower() and senhaDig == senhaConf:
+        print('Bem vindo a reserva de livro virtual.')
+    else:
+        #com o for para determinar a quantidade de repetições
+        for i in range(2, 4):
+            print(f'Email ou senha incorretos, tentativa {i}, digite novamente.')    
+            emailDig = input('Digite o email: ') 
+            senhaDig = input('Digite a senha: ') 
+            print('_'*60)
+            if emailDig.lower() == emailConf.lower() and senhaDig == senhaConf:
+                print('Bem vindo a reserva de livro virtual.') 
+                break
+            print('Conta não registrada.')
+
+
+elif opcoes.lower() == "i":
+    emailDig = input('Digite o email: ') 
+    senhaDig = input('Digite a senha: ') 
+    print('_'*60)
+    if emailDig.lower() == emailConf.lower() and senhaDig == senhaConf:
+        print('Bem vindo a sala de informações restritas.')
+    else:
+        for i in range(2, 4):
+            print(f'Email ou senha incorretos, tentativa {i}, digite novamente.')    
+            emailDig = input('Digite o email: ') 
+            senhaDig = input('Digite a senha: ') 
+            if emailDig.lower() == emailConf.lower() and senhaDig == senhaConf:
+                print('Bem vindo a sala de informações restritas.') 
+                break
+            print('Conta não cadastrada')    
+
+
+else:
+    print('Letra não cadastrada.')
