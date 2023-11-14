@@ -28,12 +28,112 @@ opcoes = input(f"""Deseja reservar livros ou acessar informações sensiveis?
                 Digite L para livros e I para informações:  """) 
 print('_'*60)   
 
+
+
+ficcao = ['0 - Kindred – laços de sangue', '1 - Neuromancer', '2 - Eu, robô', '3 - O fim da infância', '4 - O Homem do castelo alto', '5 - A paixão da nova eva', '6 - A máquina do tempo', '7 - O guia do mochileiro das galáxias', '8 - As crônicas marcianas', '9 - Fundação – trilogia']
+
+romance = ['0 - O amor não é óbvio', '1 - Conectadas', '2 - Anna karenina', '3 - Os catadores de conchas', '4 - O morro dos ventos uivantes', '5 - O amor nos tempos de cólera', '6 - O retrato de dorian Gray', '7 - Cem anos de solidão','8 - Crime e castigo', '9 -Os sete maridos de Evelyn Hugo']
+
+biografia = ['0 -A Cabeça de Steve Jobs', "1 - Sonho Grande", '2 - A Loja de Tudo: Jeff Bezos e a Era da Amazon', '3 - Nelson Mandela - Longa Caminhada até a Liberdade', '4 - A marca da Vitória', '5 - Eu sou Malala', '6 - Minha Breve História - Stephen Hawking', '7 - Gonzaga: de Pai para Filho', '8 - Pixinginha – Um Homem Carinhoso', '9 - Não pare na pista']
+
+terror = ['0 - O exorcista', '1 - It-a coisa ', '2 - Cemiterio', '3 - Dracula', '4 - O iluminado', '5 - A casa infernal', '6 - o desfiladeiro do medo', '7 - A noiva fantasma', '8 - As ruinas', '9 - O bebe de rosimery']
+
+outros = ['Introdução à psicologia', 'O poder do hábito', 'O mal-estar na civilização', 'O animal social', 'Inteligência emocional', 'O homem que confundiu sua esposa com um chapéu', 'Mulheres que amam demais', 'Teoria das personalidades', 'O livro vermelho', 'Poderosa mente']
+
+livroE = []
+devolvidos = []
+
 #.lower() para deixar em minúsculo 
 if opcoes.lower() == "l":
     emailDig = input('Digite o email: ') 
     senhaDig = input('Digite a senha: ') 
     if emailDig.lower() == emailConf.lower() and senhaDig == senhaConf:
         print('Bem vindo a reserva de livro virtual.')
+        print(f'''Digite F para ficção;
+                Digite R para romance;
+                Digite B para biografia;
+                Digite T para terror;
+                Digite O para outros;
+                Digite D para devolver.''')
+        print('_'*60)
+        opcoesL = input("Digite a letra: ").lower()
+        match opcoesL:
+
+            case "f": 
+                print(ficcao)
+                livroF = int(input("Digite o numero do livro que você deseja: "))
+                reservaL = ficcao.pop(livroF)
+                livroE.append(reservaL)
+                print(f'Você reservou o livro {reservaL}')
+
+            case "r":
+                print(romance)
+                livroR = int(input("Digite o numero do livro que você deseja: "))
+                reservaL = romance.pop(livroR)
+                livroE.append(reservaL)
+                print(f'Você reservou o livro {reservaL}')
+
+            case "b":
+                print(biografia)
+                livroB = int(input("Digite o numero do livro que você deseja: "))
+                reservaL = biografia.pop(livroB)
+                livroE.append(reservaL)
+                print(f'Você reservou o livro {reservaL}')
+
+            case "t":
+                print(terror)
+                livroT = int(input("Digite o numero do livro que você deseja: "))
+                reservaL = terror.pop(livroT)
+                livroE.append(reservaL)
+                print(f'Você reservou o livro {reservaL}')
+
+            case "o":
+                print(outros)
+                livroO = int(input("Digite o numero do livro que você deseja: "))
+                reservaL = outros.pop(livroO)
+                livroE.append(reservaL)
+                print(f'Você reservou o livro {reservaL}')
+
+            case "d":
+                print('Devolver')
+                print(f'''Digite F para ficção;
+                Digite R para romance;
+                Digite B para biografia;
+                Digite T para terror;
+                Digite O para outros;
+                Digite D para devolver.''')
+                generoD = input("Digite qual o genero que o livro devolvido é: ").lower()
+                match generoD:
+                    case "f":
+                        livroD = input("Digite o nome do livro: ")
+                        devolvidos[0] = livroD
+                        total = devolvidos + ficcao
+                        print(total)
+                    case "r":
+                        livroD = input("Digite o nome do livro: ")
+                        devolvidos[0] = livroD
+                        total = devolvidos + romance
+                        print(total)
+                    case "b":
+                        livroD = input("Digite o nome do livro: ")
+                        devolvidos[0] = livroD
+                        total = devolvidos + biografia
+                        print(total)
+                    case "t":
+                        livroD = input("Digite o nome do livro: ")
+                        devolvidos[0] = livroD
+                        total = devolvidos + terror
+                        print(total)
+                    case "o":
+                        livroD = input("Digite o nome do livro: ")
+                        devolvidos[0] = livroD
+                        total = devolvidos + outros
+                        print(total)
+                    case _:
+                        print('Letra não cadastrada')
+
+
+
     else:
         #com o for para determinar a quantidade de repetições
         for i in range(2, 4):
@@ -43,6 +143,7 @@ if opcoes.lower() == "l":
             print('_'*60)
             if emailDig.lower() == emailConf.lower() and senhaDig == senhaConf:
                 print('Bem vindo a reserva de livro virtual.') 
+                
                 break
             print('Conta não registrada.')
 
