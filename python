@@ -237,11 +237,13 @@ elif opcoes.lower() == "i":
         info = input("Desseja adicionar informações? (s/n)").lower()
         if info == 's':
             numDig = input('Digite o numero de telefone: ')
-            num = (numDig)
+            num = tuple(numDig)
             cepDig = input("Digite o cep")
-            cep = (cepDig)
+            cep = tuple(cepDig)
             cpfDig = input("Digite o cpf")
-            cpf = (cpfDig)
+            cpf = tuple(cpfDig)
+
+
             print('-'*60)
             print(f'''
                 Telefone: {num}
@@ -265,11 +267,11 @@ elif opcoes.lower() == "i":
                 info = input("Desseja adicionar informações? (s/n)").lower()
                 if info == 's':
                     numDig = input('Digite o numero de telefone: ')
-                    num = (numDig)
+                    num = tuple(numDig)
                     cepDig = input("Digite o cep")
-                    cep = (cepDig)
+                    cep = tuple(cepDig)
                     cpfDig = input("Digite o cpf")
-                    cpf = (cpfDig)
+                    cpf = tuple(cpfDig)
                     print('-'*60)
                     print(f'''
                     Telefone: {num}
@@ -283,6 +285,10 @@ elif opcoes.lower() == "i":
                     print('letra não reconhecida')                
                 break
             print('Conta não cadastrada')    
+
+  #aqui ta em branco 
+else:
+    print('Letra não cadastrada.')
 
   #aqui ta em branco 
 else:
