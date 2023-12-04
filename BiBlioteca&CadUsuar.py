@@ -10,6 +10,9 @@ livros_terror = {'O exorcista':{"emprestados": 0, "disponiveis": 2},'It-a coisa 
 
 livros_psicologia = {'Introdução à psicologia':{"emprestados": 0, "disponiveis": 4},'O poder do habito':{"emprestados": 0, "disponiveis": 2},'O mal-estar na civilização':{"emprestados": 0, "disponiveis": 2},'O animal social':{"emprestados": 0, "disponiveis": 3},'Inteligência emocional':{"emprestados": 0, "disponiveis": 1},'O homem que confundiu sua esposa com um chapéu':{"emprestados": 0, "disponiveis": 3},'Mulheres que amam demais':{"emprestados": 0, "disponiveis": 2},'Teoria das personalidades':{"emprestados": 0, "disponiveis": 3},'O livro vermelho':{"emprestados": 0, "disponiveis": 2},'Poderosa mente':{"emprestados": 0, "disponiveis": 4}}
 
+#poderia criar um dicionario para guarda todos os tipos de literaturas
+
+
 usuarios = {}
 while True:
  inicio = input('Digite (C) para cadastro ou (L) para loguin: ')
